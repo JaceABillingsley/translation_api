@@ -5,6 +5,7 @@ import translators as ts
 import translators.server as tss
 app = Flask('')
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def index():
