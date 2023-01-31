@@ -4,7 +4,7 @@ from pull import pullPrimary, pullSecondary
 import translators as ts
 import translators.server as tss
 app = Flask('')
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/')
 def index():
