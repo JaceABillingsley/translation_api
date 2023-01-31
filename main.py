@@ -7,22 +7,18 @@ app = Flask('')
 CORS(app)
 
 @app.route('/')
-@cross_origin()
 def index():
   return redirect('https://info.classtranslate.com')
 
 @app.route('/getprimary/<lang>')
-@cross_origin()
 def getPrimary(lang):
   return pullPrimary(lang)
 
 @app.route('/getsecondary/<lang>')
-@cross_origin()
 def getSecondary(lang):
   return pullSecondary(lang)
 
 @app.route('/<lang1>/<lang2>')
-@cross_origin()
 def translate(lang1, lang2):
   if lang1 != lang2:
     try: 
